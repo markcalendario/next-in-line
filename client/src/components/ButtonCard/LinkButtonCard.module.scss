@@ -1,0 +1,28 @@
+@use "../../styles/abstracts/variables-colors" as colors;
+
+.linkButtonCard {
+  display: inline-block;
+  width: 200px;
+  border: 0;
+  border-radius: 3px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: colors.$slate-8;
+  text-decoration: none;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  img {
+    width: 80%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  p {
+    font-size: 28px;
+    font-weight: bold;
+    color: colors.$slate;
+  }
+}
