@@ -5,7 +5,8 @@ export default function SequenceInput({
   className,
   name,
   placeholder,
-  disabled
+  disabled,
+  value
 }) {
   return (
     <div className={styles.sequenceInput}>
@@ -15,6 +16,7 @@ export default function SequenceInput({
         className={styles.sequence + (className ? className : "")}
         name={name}
         disabled={disabled}
+        defaultValue={value ? value : ""}
       />
     </div>
   );
