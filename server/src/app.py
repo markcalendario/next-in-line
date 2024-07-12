@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 from model.sequence import NextInLineSequence
 app = Flask(__name__)
-cors = CORS(app)
+cors = CORS(app, origins=["http://nil.learningaxies.com", "http://localhost:6000"])
 
 @app.route("/nil", methods=["POST"])
 @cross_origin()
