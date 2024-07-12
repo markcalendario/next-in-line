@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DisplayConfetti from "../../components/Confetti/Confetti.jsx";
 import GenerateButton from "../../components/GenerateButton/GenerateButton.jsx";
 import SequenceInput from "../../components/SequenceInput/SequenceInput.jsx";
 import styles from "./NumberSequence.module.scss";
@@ -21,7 +22,13 @@ export default function NumberSequenceCompiled() {
 
     const response = await fetch(url, config);
     const result = await response.json();
+
     console.log(result);
+
+    if (!result.success) {
+      return alert(result.message);
+    }
+
     setOutput(result.result);
   };
 
@@ -47,7 +54,9 @@ export default function NumberSequenceCompiled() {
               disabled
             />
           </div>
-          <GenerateButton onClick={calculate}>Calculate</GenerateButton>
+          <GenerateButton onClick={calculate}>
+            Calculate{output && <DisplayConfetti key={Math.random()} />}
+          </GenerateButton>
         </div>
       </div>
     </section>
