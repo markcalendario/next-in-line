@@ -1,13 +1,10 @@
 import os
 from flask import Flask, request, jsonify
 from model.sequence import NextInLineSequence
-app = Flask(__name__)
+from flask_cors import CORS
 
-@app.after_request
-def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', "http://nil.learningaxies.com")
-  response.headers.add('Access-Control-Allow-Headers', "*")
-  return response
+app = Flask(__name__)
+CORS(app)
 
 @app.route("/nil", methods=["POST"])
 def next_in_line():
