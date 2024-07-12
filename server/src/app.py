@@ -1,12 +1,13 @@
 import os
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 from model.sequence import NextInLineSequence
 app = Flask(__name__)
-
+cors = CORS(app)
 
 @app.after_request
 def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', "http://nil.api.learningaxies.com")
+  response.headers.add('Access-Control-Allow-Origin', "*")
   response.headers.add('Access-Control-Allow-Headers', "*")
 
   return response
