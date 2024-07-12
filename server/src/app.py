@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.after_request
 def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', "*")
+  response.headers.add('Access-Control-Allow-Origin', "http://nil.api.learningaxies.com")
   response.headers.add('Access-Control-Allow-Headers', "*")
 
   return response
