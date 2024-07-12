@@ -3,11 +3,10 @@ from flask import Flask, request, jsonify
 from model.sequence import NextInLineSequence
 app = Flask(__name__)
 
-os.environ["CLIENT"] = "http://localhost:6000"
 
 @app.after_request
 def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', os.environ["CLIENT"])
+  response.headers.add('Access-Control-Allow-Origin', "*")
   response.headers.add('Access-Control-Allow-Headers', "*")
 
   return response
