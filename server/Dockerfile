@@ -1,11 +1,10 @@
 FROM python:3.12.4-bookworm
 
-WORKDIR /python-docker
+WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
 COPY . .
 
-RUN cd src
-CMD [ "python", "app.py"]
+CMD [ "python", "/src/app.py"]
