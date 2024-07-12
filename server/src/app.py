@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 from model.sequence import NextInLineSequence
 app = Flask(__name__)
 
-os.environ["CLIENT"] = "http://localhost:5173"
+os.environ["CLIENT"] = "http://localhost:6000"
 
 @app.after_request
 def after_request(response):
