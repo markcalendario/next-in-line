@@ -3,7 +3,7 @@ import GenerateButton from "../../components/GenerateButton/GenerateButton.jsx";
 import SequenceInput from "../../components/SequenceInput/SequenceInput.jsx";
 import styles from "./NumberSequence.module.scss";
 
-export default function GeometricSequenceCompiled() {
+export default function NumberSequenceCompiled() {
   const [output, setOutput] = useState(null);
 
   const calculate = async () => {
@@ -30,8 +30,11 @@ export default function GeometricSequenceCompiled() {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.texts}>
-            <h1>Geometric Sequence</h1>
-            <p>I'll try to guess the next number in the sequence.</p>
+            <h1>Number Sequence</h1>
+            <p>
+              By clicking the calculate button, the system will guess the next
+              number in the sequence.
+            </p>
           </div>
           <div className={styles.sequence}>
             <SequenceInput id="first" placeholder="First Value" />

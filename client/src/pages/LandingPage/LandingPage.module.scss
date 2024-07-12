@@ -2,7 +2,7 @@
 @use "../../styles/abstracts/variables-colors" as colors;
 @use "../../styles/abstracts/mixins-screens" as screens;
 
-#compose {
+#landingPage {
   min-height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,6 +20,15 @@
       text-align: center;
 
       .texts {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include screens.tabletAndDesktop {
+          max-width: 600px;
+          margin: auto;
+        }
+
         h1 {
           font-weight: 900;
           font-size: 32px;
@@ -29,10 +38,19 @@
             font-size: 58px;
           }
         }
+
+        p {
+          color: colors.$slate;
+
+          @include screens.tabletAndDesktop {
+            font-size: 28px;
+            font-weight: 500;
+          }
+        }
       }
 
       .genres {
-        margin-top: 20px;
+        margin-top: 40px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
