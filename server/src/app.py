@@ -5,9 +5,8 @@ from model.sequence import NextInLineSequence
 app = Flask(__name__)
 cors = CORS(app)
 
-
-
 @app.route("/nil", methods=["POST"])
+@cross_origin()
 def next_in_line():
   payload = request.get_json()
 
