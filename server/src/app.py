@@ -5,12 +5,7 @@ from model.sequence import NextInLineSequence
 app = Flask(__name__)
 cors = CORS(app)
 
-@app.after_request
-def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', "*")
-  response.headers.add('Access-Control-Allow-Headers', "*")
 
-  return response
 
 @app.route("/nil", methods=["POST"])
 def next_in_line():
