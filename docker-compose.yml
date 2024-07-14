@@ -2,11 +2,11 @@ services:
   client:
     build: ./client
     ports:
-      - 6000:6000
+      - 3000:3000
     restart: always
 
   server:
     build: ./server
     ports:
-      - 6001:6001
+      - 3001:3001
     restart: always
